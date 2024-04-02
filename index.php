@@ -19,7 +19,10 @@ class Movie {
     public function getMovieDetails() {
         // la funzione implode converte l'array in una stringa e viene separato dalla virgola
         $genres = implode(", ", $this->genres);
-        return $this->title . ', diretto da ' . $this->director . ', uscito nel ' . $this->year . ', generi: ' . $genres;
+        return '<strong>Titolo: </strong>' . $this->title . '<br>' .
+       '<strong>Diretto da: </strong>' . $this->director . '<br>' .
+       '<strong>Uscito nel: </strong>' . $this->year . '<br>' .
+       '<strong>Generi: </strong>' . $genres;
     }
 }
 
@@ -64,11 +67,12 @@ $movies = [
     
     <div class="container">
         <div class="row my-5">
-            <h1 class="col-12">PHP-oop-1</h1>
-            <ul class="col">
+            <h1 class="col-12 text-center">PHP-oop-1</h1>
+            <h2 class="mb-5 px-4">Film Harry Potter</h2>
+            <ul class="col d-flex flex-wrap list-unstyled row-gap-3 ">
             <?php
             foreach($movies as $movie) {
-                echo "<li>" . $movie->getMovieDetails() . "</li>";
+                echo '<li class="col-12 col-md-6 col-lg-3 px-3">' . $movie->getMovieDetails() . '</li>';
             }
             ?>
             </ul>
