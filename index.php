@@ -1,3 +1,12 @@
+<?php
+class Movie {
+    public $title;
+    public $director;
+    public $year;
+
+}
+?>
+
 <!DOCTYPE html>
 <html lang="it" data-bs-theme="dark">
 <head>
@@ -12,7 +21,10 @@
     
     <div class="container">
         <div class="row my-5">
-            <h1>PHP-oop-1</h1>
+            <h1 class="col-12">PHP-oop-1</h1>
+            <ul class="col">
+                
+            </ul>
         </div>
     </div>
 
