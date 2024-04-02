@@ -4,27 +4,46 @@ class Movie {
     public $title;
     public $director;
     public $year;
+    // Bonus 1:
+    // Modificare la classe Movie in modo che accetti piú di un genere.
+    public $genres;
 
 // aggiungo una funzione costruttore per "montare" l'oggetto con le proprietà
-    function __construct($_title, $_director, $_year) {
+    function __construct($_title, $_director, $_year, $genres) {
         $this->title = $_title;
         $this->director = $_director;
         $this->year = $_year;
+        $this->genres = $genres;
     }
 
     public function getMovieDetails() {
-        return $this->title . ', diretto da ' . $this->director . ', uscito nel ' . $this->year;
+        // la funzione implode converte l'array in una stringa e viene separato dalla virgola
+        $genres = implode(", ", $this->genres);
+        return $this->title . ', diretto da ' . $this->director . ', uscito nel ' . $this->year . ', generi: ' . $genres;
     }
 }
 
 // aggiungo qui i film
-$movie1 = new Movie("Harry Potter e la pietra filosofale", "Chris Columbus", 2001);
-$movie2 = new Movie("Harry Potter e la camera dei segreti", "Chris Columbus", 2002);
+$movie1 = new Movie("Harry Potter e la pietra filosofale", "Chris Columbus", 2001, ["Fantasy", "Avventura", "Famiglia"]);
+$movie2 = new Movie("Harry Potter e la camera dei segreti", "Chris Columbus", 2002, ["Fantasy", "Avventura", "Famiglia"]);
+$movie3 = new Movie("Harry Potter e il prigioniero di Azkaban", "Alfonso Cuarón", 2004, ["Fantasy", "Avventura", "Mistero"]);
+$movie4 = new Movie("Harry Potter e il calice di fuoco", "Mike Newell", 2005, ["Fantasy", "Avventura", "Azione"]);
+$movie5 = new Movie("Harry Potter e l'Ordine della Fenice", "David Yates", 2007, ["Fantasy", "Avventura", "Azione", "Drammatico"]);
+$movie6 = new Movie("Harry Potter e il principe mezzosangue", "David Yates", 2009, ["Fantasy", "Avventura", "Mistero", "Romance"]);
+$movie7 = new Movie("Harry Potter e i doni della morte - Parte 1", "David Yates", 2010, ["Fantasy", "Avventura", "Azione", "Drammatico"]);
+$movie8 = new Movie("Harry Potter e i doni della morte - Parte 2", "David Yates", 2011, ["Fantasy", "Avventura", "Azione", "Drammatico"]);
+
 
 // creo un array di oggetti film
 $movies = [
     $movie1,
-    $movie2
+    $movie2,
+    $movie3,
+    $movie4,
+    $movie5,
+    $movie6,
+    $movie7,
+    $movie8,
 ];
 
 
