@@ -69,15 +69,23 @@ $movies = [
         <div class="row my-5">
             <h1 class="col-12 text-center">PHP-oop-1</h1>
             <h2 class="mb-5 px-4">Film Harry Potter</h2>
-            <ul class="col d-flex flex-wrap list-unstyled row-gap-3 ">
+            <div class="col d-flex flex-wrap list-unstyled row-gap-3 ">
             <?php
             foreach($movies as $movie) {
-                echo '<li class="col-12 col-md-6 col-lg-3 px-3">' . $movie->getMovieDetails() . '</li>';
+                echo '
+                <div class="col-12 col-md-6 col-lg-3 px-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="card-text">' . $movie->getMovieDetails() . '</p>
+                        </div>
+                    </div>
+                </div>';
             }
             ?>
-            </ul>
+            </div>
         </div>
     </div>
+
 
 
     <!-- link bootstrap -->
