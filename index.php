@@ -16,17 +16,19 @@ class Movie {
         return $this->title . ', diretto da ' . $this->director . ', uscito nel ' . $this->year;
     }
 }
+
+// aggiungo qui i film
+$movie1 = new Movie("Harry Potter e la pietra filosofale", "Chris Columbus", 2001);
+$movie2 = new Movie("Harry Potter e la camera dei segreti", "Chris Columbus", 2002);
+
 // creo un array di oggetti film
 $movies = [
     $movie1,
     $movie2
 ];
 
-// aggiungo qui i film
-$movie1 = new Movie("Harry Potter e la pietra filosofale", "Chris Columbus", 2001);
-$movie2 = new Movie("Harry Potter e la camera dei segreti", "Chris Columbus", 2002);
 
-    
+
 ?>
 
 <!DOCTYPE html>
